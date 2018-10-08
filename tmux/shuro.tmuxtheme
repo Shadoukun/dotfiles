@@ -1,0 +1,27 @@
+set -g status-position top
+
+CURRENT_WIN_FG='#e4e4e4'
+CURRENT_WIN_BG='#0071b5'
+
+set -g status-fg "#999999"
+set -g status-bg colour233
+
+# left status bar
+set -g status-left-bg colour233
+set -g status-left-fg colour243
+set -g status-left-length 40
+set -g status-left "#{?client_prefix,#[fg=#e4e4e4]#[bg=red] #[bold] #S #[fg=red]#[bg=colour233],#[fg=colour232]#[bg=#c4c4c4] #[bold] #S #[fg=#c4c4c4]#[bg=colour233]}"
+
+# right status bar
+set -g status-right-bg colour233
+set -g status-right-fg colour243
+set -g status-right-length 100
+set -g status-right "#[fg=colour255,bg=colour236]#[fg=colour233,bg=colour255,bold]  #U@#[fg=colour232,bg=colour255,bold]#H #[fg=colour233,bg=colour255]#[fg=colour255,bg=colour233,bold] #{session_attached} "
+
+# window status
+set -g status-justify left
+set -g window-status-format "  #I: #W  "
+
+# current window
+set -g window-status-current-style "fg=${CURRENT_WIN_FG},bg=${CURRENT_WIN_BG}"
+set -g window-status-current-format "#[fg=black,bg=${CURRENT_WIN_BG}]#[fg=default,bg=default,default] #I: #W #[fg=${CURRENT_WIN_BG},bg=black]"

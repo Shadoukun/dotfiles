@@ -1,0 +1,18 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zsh: zsh
+    ~/.zshrc:
+        force: true
+        path: zshrc
+    ~/.tmux: tmux
+    ~/.tmux.conf:
+        force: true
+        path: tmux.conf
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
